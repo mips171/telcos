@@ -1,0 +1,13 @@
+#!/bin/sh
+#modem=$(mmcli -m 0 | grep "device: " | grep -Eo "/sys/devices/.*" | tr -d "'")
+#modem="/sys/devices/platform/1e1c0000.xhci/usb2/2-1"
+modem="/sys/devices/platform/ehci-platform/usb1/1-1"
+uci set network.mobiledata=interface
+uci set network.mobiledata.proto=modemmanager
+uci set network.mobiledata.device=$modem
+#uci set network.mobiledata.sim=1
+uci set network.mobiledata.metric=50
+#uci set network.mobiledata.sim1apn=internet
+#uci set network.mobiledata.sim2apn=internet
+uci commit network.mobiledata
+unset modem

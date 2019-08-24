@@ -1,0 +1,52 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2016 Aleksander Morgado <aleksander@aleksander.es>
+
+USE_PROCD=1
+START=70
+
+stop_service() {
+	# Load common utils
+	. /etc/modemmanager/modemmanager.common
+	# Set all configured interfaces as unavailable
+	mm_cleanup_interfaces
+}
+
+start_service() {
+	# Load common utils
+	. /etc/modemmanager/modemmanager.common
+
+	# Always make sure the rundir exists
+	mkdir -m 0755 -p "${MODEMMANAGER_RUNDIR}"
+
+	# Initially set all configured interfaces as unavailable
+	mm_cleanup_interfaces
+
+	# Report cached events (will wait for MM to be launched)
+	( mm_report_events_from_cache ) >/dev/null 2>&1 &
+
+	# Setup ModemManager service
+	procd_open_instance
+	if [ $(cat /etc/modemsettings/modem_in_10D) = "true" -a $(cat /etc/modemsettings/modem_debug_mode) = "false" ]; then
+	  if [ $(cat /etc/modemsettings/modem_in_10D) = "true" ]; then
+	    logger -t INFO "Modem in correct 10D mode.  Starting ModemManager service normally."
+	  elif [ $(cat /etc/modemsettings/modem_debug_mode) = "false" ]; then
+	    logger -t INFO "Modem not in debug mode. Starting ModemManager service normally." 
+	  elif [ $(cat /etc/modemsettings/modem_debug_mode) = "false" -a $(cat /etc/modemsettings/modem_in_10D) = "true" ]; then
+            logger -t INFO "Modem not in debug mode and in 10D mode.  Starting ModemManager normally."
+	  fi
+	procd_set_param command /usr/sbin/ModemManager	
+	fi
+	if [ $(cat /etc/modemsettings/modem_debug_mode) = "true" -o $(cat /etc/modemsettings/modem_in_10D) = "false" ]; then
+	  if [ $(cat /etc/modemsettings/modem_debug_mode) = "true" ]; then
+	    logger -t INFO "User requested ModemManager service in debug mode.  Starting ModemManager service in debug mode."
+	  elif [ $(cat /etc/modemsettings/modem_in_10D) = "false" ]; then
+	    logger -t INFO "Modem was not in 10D mode. Starting ModemManager service in debug mode."
+	  elif [ $(cat /etc/modemsettings/modem_in_10D) = "false" -a $(cat /etc/modemsettings/modem_debug_mode) = "true" ]; then
+	    logger -t INFO "Modem was not in 10D mode and debug mode was activated.  Starting ModemManager service in debug mode.  Consider setting /etc/modemsettings/modem_debug_mode to false"  
+	  fi
+	  procd_set_param command /usr/sbin/ModemManager --debug            	
+	fi
+	procd_set_param respawn ${respawn_threshold:-3600} ${respawn_timeout:-5} ${respawn_retry:-5}
+	procd_set_param pidfile "${MODEMMANAGER_PID_FILE}"
+	procd_close_instance
+}
