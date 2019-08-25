@@ -6,7 +6,7 @@
 
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=Light
+LUCI_TITLE:=Dark
 LUCI_DEPENDS:=
 
 include /home/nick/code/telcos/telcos_luci/luci.mk
