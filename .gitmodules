@@ -1,3 +1,6 @@
 [submodule "telcos_openwrt"]
 	path = openwrt
 	url = https://github.com/nickberry17/telcos_openwrt.git
+[submodule "telcos_luci"]
+	path = telcos_luci
+	url = git@github.com:nickberry17/telcos_luci.git
