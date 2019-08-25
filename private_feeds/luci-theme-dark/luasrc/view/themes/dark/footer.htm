@@ -1,4 +1,8 @@
-<%#                                   
+<%#     
+    Telco Dark is a theme for LuCI.  It is based on luci-theme-rosy.
+    luci-theme-dark
+        Copyright 2019 Nicholas Smith <nicholas.smith@telcoantennas.com.au>
+                              
     Rosy is a theme for LuCI. It is based on luci-theme-bootstrap
     luci-theme-rosy
         Copyright 2018 Rosy Song <rosysong@rosinson.com>
@@ -26,23 +30,17 @@
 %>
 
 </div>
-</div>
-</div>
-<footer>
-    <% if #categories > 1 then %>
-    <ul class="breadcrumb pull-right" id="modemenu">
-        <% for i, r in ipairs(categories) do %>
-            <li<% if request[1]==r then %> class="active"<%end%>><a href="<%=controller%>/<%=r%>/"><%=striptags(translate(tree.nodes[r].title))%></a> <span class="divider">|</span></li>
-        <% end %>
-    </ul>
-    <% end %>
+<footer class="mobile-hide">
+    
 </footer>
+</div>
+</div>
 
 <script>                                         
     var luciLocation = <%= luci.http.write_json(luci.dispatcher.context.path) %>;
 </script>
-<script src="<%=media%>/js/jquery.min.js"></script>
-<script src="<%=media%>/js/script.js"></script>
+<script src="<%=media%>/js/jquery.min.js?v=git-18.247.71242-9541751"></script>
+<script src="<%=media%>/js/script.js?v=git-18.247.71242-9541751"></script>
 </body>
 
 </html>
