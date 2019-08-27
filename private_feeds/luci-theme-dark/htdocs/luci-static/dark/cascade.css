@@ -2532,12 +2532,16 @@ input.cbi-input-text {
   }
 }
 
+/* Update to support new Javascript LuCI */
+[data-tab-title] {
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+}
 
-
-
-
-
-
-
-
-
+[data-tab-active="true"] {
+	opacity: 1;
+	height: auto;
+	overflow: visible;
+	transition: opacity .25s ease-in;
+}
