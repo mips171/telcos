@@ -1,0 +1,13 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+#
+#
+# These commands are required by your Telco Electronics device.
+#
+# BEGINNING of required commands.
+#
+sleep 30 && /etc/init.d/modemmanager start ; sleep 2 && /usr/bin/set_modem_in_10D_mode.sh ; sleep 20 && /usr/bin/mmcli -m 0 --signal-setup=90
+# END of required commands.
+#
+#
+exit 0
