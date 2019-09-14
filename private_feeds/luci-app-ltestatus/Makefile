@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LTE Status
-LUCI_DEPENDS:=
+LUCI_DEPENDS:=+modemmanager
 
 include /home/nick/code/telcos/telcos_luci/luci.mk
 
