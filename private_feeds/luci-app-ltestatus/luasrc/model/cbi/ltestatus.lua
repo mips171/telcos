@@ -60,12 +60,19 @@ if has_mmcli then
 
         local castatus = luci.sys.exec("qmicli -p -d /dev/cdc-wdm0 --nas-get-lte-cphy-ca-info")
         local strip = castatus:gsub("\n", "<br>")
-        local ch_title = strip:gsub("%[%/dev%/cdc%-wdm0%] Successfully got carrier aggregation info", "<h3>Mobile Network Information</h3>Carrier aggregation and band information. <br>Note: Secondary carrier aggregation is active only durring network activity. Bandwidth shown in MHz.")
+        local ch_title = strip:gsub("%[%/dev%/cdc%-wdm0%] Successfully got carrier aggregation info", "<h3>Carrier Aggregation Information</h3>Note: Secondary cell is activated only durring network activity. Bandwidth is shown in MHz.")
         local x = ch_title:gsub("Primary Cell Info", "<br><h4>Primary Cell Info</h4>")
         local y = x:gsub("Secondary Cell Info", "<br><h4>Secondary Cell Info</h4>")
         local strip_sq = y:gsub("'", "")
         local strip_eutran = strip_sq:gsub("eutran%-", "")
         local adv_mobile_info = strip_eutran
+
+        local msg_loc_header = "<h3>Cell Location Information</h3>"
+        local msg_mcc = bold .. translate("MCC") .. sp .. nbold .. mcc .. br
+        local msg_mnc = bold .. translate("MNC") .. sp .. nbold .. mnc .. br
+        local msg_lac = bold .. translate("3GPP Location Area Code") .. sp .. nbold .. tostring(tonumber("0x"..lac, 10)) .. br
+        local msg_cid = bold .. translate("Cell ID") .. sp .. nbold .. tostring(tonumber("0x"..cid, 10)) .. br
+        local msg_location = msg_loc_header .. msg_lac .. msg_cid .. msg_mcc .. msg_mnc 
 
         local msg_imei = bold .. translate("IMEI") .. sp .. nbold .. imei .. br
         local msg_access_tech = bold .. translate("Access Technology") .. sp .. nbold .. access_tech .. br
@@ -95,12 +102,12 @@ if has_mmcli then
 		signal_info = signal_header .. "" .. msg_no_signal .. "<br>"
 		else
 	if string.match(access_tech, "LTE") then
-	        signal_info = signal_header ..  msg_rssi .. msg_rsrq .. msg_rsrp .. msg_snr .. msg_percent .. active_band .. adv_mobile_info
+	        signal_info = signal_header ..  msg_rssi .. msg_rsrq .. msg_rsrp .. msg_snr .. msg_percent .. msg_location .. active_band .. adv_mobile_info
 	    elseif string.match(access_tech, "UMTS") then
-	        signal_info = signal_header ..  msg_rssi .. msg_rscp .. msg_ecio .. msg_percent .. active_band
+	        signal_info = signal_header ..  msg_rssi .. msg_rscp .. msg_ecio .. msg_percent .. msg_location .. active_band
 	    elseif string.match(access_tech, "UNKNOWN") then
 			modem_info = minfo_header .. msg_imei
-			signal_info = signal_header .. msg_rssi .. msg_percent .. active_band
+			signal_info = signal_header .. msg_rssi .. msg_percent .. msg_location .. active_band
 		end
 	end
 
