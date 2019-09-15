@@ -19,8 +19,8 @@ if has_mmcli then
         local bold = "<b>"
         local nbold = "</b>"
         local sp = ": "
-	local lanIPNumber = luci.sys.exec("uci get network.lan.ipaddr")
-	local modemstatus   = luci.sys.exec("mmcli -m 0 > /tmp/modemstatus")
+	    local lanIPNumber = luci.sys.exec("uci get network.lan.ipaddr")
+	    local modemstatus   = luci.sys.exec("mmcli -m 0 > /tmp/modemstatus")
 
         function checkInternet()
                 luci.sys.exec("while ! ping -c1 www.telcoantennas.com.au >/dev/null; do echo '<font color='red'>disconnected</font>. If signal is good, please check that the correct APN and other mobile data settings are in use.' > /tmp/internetstatus && exit 0; done ; echo '<font color='#20BF55'>connected</font>' > /tmp/internetstatus && exit 0")
@@ -42,7 +42,7 @@ if has_mmcli then
         local mobile_snr    = luci.sys.exec("grep 's/n:' /tmp/modemsignal | sed 's/^.*: //'")
         local mobile_rscp    = luci.sys.exec("grep 'rscp:' /tmp/modemsignal | sed 's/^.*: //'")
         local mobile_ecio    = luci.sys.exec("grep 'rssi:' /tmp/modemsignal | sed 's/^.*: //'")
-	local mobile_percentage = luci.sys.exec("grep quality /tmp/modemstatus | sed 's/.*: //' | tr -cd [:digit:] ")
+	    local mobile_percentage = luci.sys.exec("grep quality /tmp/modemstatus | sed 's/.*: //' | tr -cd [:digit:] ")
 
         local sim_missing   = luci.sys.exec("grep 'sim-missing' /tmp/modemstatus | sed 's/.*: //' | tr -d \"'\"")
 
@@ -67,12 +67,18 @@ if has_mmcli then
         local strip_eutran = strip_sq:gsub("eutran%-", "")
         local adv_mobile_info = strip_eutran
 
+        local modemlocation = luci.sys.exec("mmcli -m 0 --location-get -K > /tmp/modemlocation")
+        local mcc = luci.sys.exec("grep 'mcc' /tmp/modemlocation | sed 's/^.*: //'")
+        local mnc = luci.sys.exec("grep 'mnc' /tmp/modemlocation | sed 's/^.*: //'")
+        local lac = luci.sys.exec("grep 'lac' /tmp/modemlocation | sed 's/^.*: //'")
+        local cid = luci.sys.exec("grep 'cid' /tmp/modemlocation | sed 's/^.*: //'")
+
         local msg_loc_header = "<h3>Cell Location Information</h3>"
         local msg_mcc = bold .. translate("MCC") .. sp .. nbold .. mcc .. br
         local msg_mnc = bold .. translate("MNC") .. sp .. nbold .. mnc .. br
         local msg_lac = bold .. translate("3GPP Location Area Code") .. sp .. nbold .. tostring(tonumber("0x"..lac, 10)) .. br
         local msg_cid = bold .. translate("Cell ID") .. sp .. nbold .. tostring(tonumber("0x"..cid, 10)) .. br
-        local msg_location = msg_loc_header .. msg_lac .. msg_cid .. msg_mcc .. msg_mnc 
+        local msg_location = msg_loc_header .. msg_lac .. msg_cid .. msg_mcc .. msg_mnc
 
         local msg_imei = bold .. translate("IMEI") .. sp .. nbold .. imei .. br
         local msg_access_tech = bold .. translate("Access Technology") .. sp .. nbold .. access_tech .. br
