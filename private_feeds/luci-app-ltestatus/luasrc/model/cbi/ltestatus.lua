@@ -31,17 +31,17 @@ if has_mmcli then
 
         internetStatus = translate("Internet is") .. " " .. checkInternet() .. br
 
-        local modemsignal   = luci.sys.exec("mmcli -m 0 --signal-setup=90 && mmcli -m 0 --signal-get > /tmp/modemsignal")
+        local modemsignal   = luci.sys.exec("mmcli -m 0 --signal-setup=3 && mmcli -m 0 --signal-get > /tmp/modemsignal")
         local sim_status    = luci.sys.exec("cat /tmp/modemstatus | grep missing")
         local imei          = luci.sys.exec("cat /tmp/modemstatus | grep \"equipment id\" | sed 's/.*: //' | tr -cd [:digit:] | tr -c [:digit:]")
         local access_tech   = string.upper(luci.sys.exec("cat /tmp/modemstatus | grep access | sed 's/.*: //' | tr -d \"'\""))
         local operator_name = luci.sys.exec("cat /tmp/modemstatus | grep 'operator name' | sed 's/.*: //' | tr -d \"'\"")
         local mobile_rssi   = luci.sys.exec("grep 'rssi:' /tmp/modemsignal | sed 's/^.*: //'")
         local mobile_rsrq   = luci.sys.exec("grep 'rsrq:' /tmp/modemsignal | sed 's/^.*: //'")
-        local mobile_rsrp   = luci.sys.exec("grep 'rssi:' /tmp/modemsignal | sed 's/^.*: //'")
+        local mobile_rsrp   = luci.sys.exec("grep 'rsrp:' /tmp/modemsignal | sed 's/^.*: //'")
         local mobile_snr    = luci.sys.exec("grep 's/n:' /tmp/modemsignal | sed 's/^.*: //'")
         local mobile_rscp    = luci.sys.exec("grep 'rscp:' /tmp/modemsignal | sed 's/^.*: //'")
-        local mobile_ecio    = luci.sys.exec("grep 'rssi:' /tmp/modemsignal | sed 's/^.*: //'")
+        local mobile_ecio    = luci.sys.exec("grep 'ecio:' /tmp/modemsignal | sed 's/^.*: //'")
 	    local mobile_percentage = luci.sys.exec("grep quality /tmp/modemstatus | sed 's/.*: //' | tr -cd [:digit:] ")
 
         local sim_missing   = luci.sys.exec("grep 'sim-missing' /tmp/modemstatus | sed 's/.*: //' | tr -d \"'\"")
