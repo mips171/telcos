@@ -244,7 +244,7 @@
 		<div class="fill">
 			<div class="container">
 				<span class="showSide"></span>
-				<a class="brand" href="#"><%=boardinfo.model or "?"%></a>
+				<a class="brand" href="#"><%= '<img src="/luci-static/resources/brand_w.svg">' or boardinfo.model%></a>
 				<div class="btn-con pull-right">
 					<% render_changes() %>
 					<span id="xhr_poll_status" style="display:none" onclick="XHR.running() ? XHR.halt() : XHR.run()">
@@ -269,7 +269,7 @@
 		<div class="main-left">
 			<div class="nav-container">
 				<a class="brand" href="#">
-					<%=boardinfo.model or "?"%></a>
+					<%= '<img src="/luci-static/resources/brand_w.svg">' or boardinfo.model%></a>
 				<div class="navbar-container">
 					<% render_topmenu() %>
 				</div>
