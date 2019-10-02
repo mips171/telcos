@@ -6,7 +6,7 @@
 	fair=50
 	good=80
 	excellent=90
-mmcli -m 0 --signal-setup=90
+mmcli -m 0 --signal-setup=3
 
 while :
 	do
