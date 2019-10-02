@@ -85,8 +85,8 @@ if has_mmcli then
         local msg_operator_name = bold .. translate("Operator Name") .. sp ..nbold ..operator_name .. br
 
         -- signal information
-        local msg_percent = bold .. translate("Percentage") .. sp .. nbold .. mobile_percentage .."%" .. br
-        local msg_rssi = bold .. translate("RSSI") .. sp .. nbold .. mobile_rssi .. br
+		local msg_percent = bold .. translate("Percentage") .. sp .. nbold .. mobile_percentage .."%" .. br .. br .. "<hr>"
+		local msg_rssi = bold .. translate("RSSI") .. sp .. nbold .. mobile_rssi .. br
         local msg_rsrq = bold .. translate("RSRQ") .. sp .. nbold .. mobile_rsrq .. br
         local msg_rsrp = bold .. translate("RSRP") .. sp .. nbold .. mobile_rsrp .. br
         local msg_snr  = bold .. translate("SNR")  .. sp .. nbold .. mobile_snr  .. br
