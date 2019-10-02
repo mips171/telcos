@@ -75,7 +75,6 @@ function m.handle(self, state, data)
 		else
 			m.message = translate("<font color='#20BF55'><b>Successfully locked to bands: </b></font> " .. bands_to_set .. "<br>Click update to refresh the list of currently allowed bands.<br><br>" .. umtswarning)
 		end
-
 	end
 
 	if (data.default) then
@@ -87,7 +86,6 @@ function m.handle(self, state, data)
 			m.message = translate("<font color='#20BF55'><b>Successfully reset to default bands: </b></font> " .. bands_to_set .. "<br>Click update to refresh the list of currently allowed bands.<br><br>")
 		end
 	end
-
 
 	return true
 	end
