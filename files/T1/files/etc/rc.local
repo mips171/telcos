@@ -6,7 +6,10 @@
 #
 # BEGINNING of required commands.
 #
-sleep 30 && /etc/init.d/modemmanager start ; sleep 2 && /usr/bin/set_modem_in_10D_mode.sh ; sleep 20 && /usr/bin/mmcli -m 0 --signal-setup=90
+sleep 30
+/usr/bin/set_modem_in_10D_mode.sh
+sleep 30
+ifup mobiledata
 # END of required commands.
 #
 #
