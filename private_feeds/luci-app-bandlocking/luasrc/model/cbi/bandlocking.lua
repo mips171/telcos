@@ -79,7 +79,7 @@ function m.handle(self, state, data)
 
 	if (data.default) then
 		bands_to_set = "utran-1|utran-6|utran-5|utran-8|utran-9|eutran-1|eutran-3|eutran-5|eutran-7|eutran-18|eutran-19|eutran-21|eutran-28|eutran-38|eutran-39|eutran-40|eutran-41|utran-19"
-		local stat = luci.sys.exec('mmcli -m 0 --set-current-bands="' .. bands_to_set .. '" && /etc/init.d/modemmanager restart') == 0
+		local stat = luci.sys.exec('printf "AT!ENTERCND=\"A710\"\r" > /dev/ttyUSB2 && sleep 1 && printf "AT!BAND=00\r" > /dev/ttyUSB2 && /etc/init.d/modemmanager restart') == 0
 		if stat then
 			m.errmessage = translate("Unknown error.")
 		else
