@@ -33,7 +33,7 @@ if has_mmcli then
 
         local modemsignal   = luci.sys.exec("mmcli -m 0 --signal-setup=3 && mmcli -m 0 --signal-get > /tmp/modemsignal")
         local sim_status    = luci.sys.exec("cat /tmp/modemstatus | grep missing")
-        local imei          = luci.sys.exec("cat /tmp/modemstatus | grep \"equipment id\" | sed 's/.*: //' | tr -cd [:digit:] | tr -c [:digit:]")
+        local imei          = luci.sys.exec("cat /tmp/modemstatus | grep \"equipment id\" | sed 's/[^0-9]*//g'")
         local access_tech   = string.upper(luci.sys.exec("cat /tmp/modemstatus | grep access | sed 's/.*: //' | tr -d \"'\""))
         local operator_name = luci.sys.exec("cat /tmp/modemstatus | grep 'operator name' | sed 's/.*: //' | tr -d \"'\"")
         local mobile_rssi   = luci.sys.exec("grep 'rssi:' /tmp/modemsignal | sed 's/^.*: //'")
