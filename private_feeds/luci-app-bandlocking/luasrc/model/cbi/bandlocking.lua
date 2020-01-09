@@ -43,9 +43,16 @@ s = m:section(SimpleSection, nil, "Here you can restrict the modem to use only t
 
         default = m:field(Flag, "default", "Reset to Default", "Reset the modem to use default bands (all bands).")
 
-c = m:section(SimpleSection, nil, "Currently allowed bands <a href='https://" .. luci.sys.exec('uci get network.lan.ipaddr') .. "/cgi-bin/luci/admin/network/bandlocking" .. "'>[update]</a>" .. "<br><br>" ..
+	local current_bands = luci.sys.exec("mmcli -m 0 -K | grep modem.generic.current-bands.value | sed 's/^.*: //'"):gsub("eutran","<br>4G"):gsub("utran","<br>3G"):gsub("-", " band ")
+	local current_band_msg = ""
 
-	luci.sys.exec("mmcli -m 0 -K | grep modem.generic.current-bands.value | sed 's/^.*: //'"):gsub("eutran","<br>4G"):gsub("utran","<br>3G"):gsub("-", " band "))
+	if (current_bands ~= "" and current_bands ~= nil) then
+		current_band_msg = current_bands
+		else
+		current_band_msg = "Modem is not ready yet. Please update the page."
+	end
+
+c = m:section(SimpleSection, nil, "Currently allowed bands <a href='https://" .. luci.sys.exec('uci get network.lan.ipaddr') .. "/cgi-bin/luci/admin/network/bandlocking" .. "'>[update]</a>" .. "<br><br>" .. current_band_msg)
 
 else
         msg = translate("This device's modem was not detected.  Please reinstall the firmware without keeping settings or reset to factory defaults.")
@@ -79,7 +86,7 @@ function m.handle(self, state, data)
 
 	if (data.default) then
 		bands_to_set = "utran-1|utran-6|utran-5|utran-8|utran-9|eutran-1|eutran-3|eutran-5|eutran-7|eutran-18|eutran-19|eutran-21|eutran-28|eutran-38|eutran-39|eutran-40|eutran-41|utran-19"
-		local stat = luci.sys.exec('printf "AT!ENTERCND=\"A710\"\r" > /dev/ttyUSB2 && sleep 1 && printf "AT!BAND=00\r" > /dev/ttyUSB2 && /etc/init.d/modemmanager restart') == 0
+		local stat = luci.sys.exec('/etc/init.d/modemmanager stop && sleep 2 && printf "AT!ENTERCND=\"A710\"\r" > /dev/ttyUSB2 && sleep 1 && printf "AT!BAND=00\r" > /dev/ttyUSB2 && sleep 2 && /etc/init.d/modemmanager restart') == 0
 		if stat then
 			m.errmessage = translate("Unknown error.")
 		else
