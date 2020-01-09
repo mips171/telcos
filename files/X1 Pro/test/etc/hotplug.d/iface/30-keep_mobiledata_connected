@@ -1,0 +1,84 @@
+#!/bin/sh
+# Hotplug script for ModemManager events.  Place in /etc/hotplug.d/iface/30-keepalive_modemmanager
+# and give execute permission.  
+#
+# Copyright 2019 Nicholas Smith <mips171@icloud.com>
+#
+
+if [ "$INTERFACE" = "mobiledata" ]; then
+if [ "$ACTION" != "ifup" ]; then
+MODEMIFACE="mobiledata"
+
+# TODO get modem index dynamically
+/usr/bin/mmcli -m 0 > /tmp/modemStatus 
+DISABLED=$(grep -w "disabled" /tmp/modemStatus)
+SEARCHING=$(grep -w "searching" /tmp/modemStatus)
+REGISTERED=$(grep -w "registered" /tmp/modemStatus)
+CONNECTED=$(grep -w "connected" /tmp/modemStatus)
+IDLE=$(grep -w "idle" /tmp/modemStatus)
+
+RUNNING="0" # A sort of lock
+
+checkandreconnect() {
+	logger -t INFO "Giving 10 extra seconds to complete modem setup."
+	sleep 10
+	logger -t INFO "Beginning ping test."
+	ping -c3 -s56 -w 4000 www.telcoantennas.com.au
+	if [ $? -eq 0 ]; then
+		logger -t INFO "Modem is connected. 3 successful pings."
+	else
+                if [ "$RUNNING" -eq "0" ]; then                                                                                  
+                        RUNNING="1"                                                                                             
+                        logger -t INFO "Modem failed ping test. Reconnecting."                                                   
+                        /etc/init.d/modemmanager stop && sleep 2 && /etc/init.d/modemmanager start                               
+                        ifup $MODEMIFACE                                                                                         
+                        RUNNING="0"
+		else
+			logger -t INFO "Modem is already reconnecting. Stopping."
+                fi
+	fi
+}
+
+reconnect() {
+        if [ "$RUNNING" -eq "0" ]; then                                                                                  
+		RUNNING="1"                                                                                             
+		logger -t INFO "Reconnecting modem now."                                                   
+		/etc/init.d/modemmanager stop && sleep 2 && /etc/init.d/modemmanager start                               
+		ifup $MODEMIFACE                                                                                         
+		RUNNING="0"
+	else
+		logger -t INFO "Modem is already reconnecting. Stopping."
+	fi
+}
+
+logger -t INFO "Hotplug: Modem Hotplug script is running."
+
+if [ -n "$DISABLED" ]; then
+	logger -t INFO	"Modem is disabled. Will attempt to initiate connection."
+	logger -t DEBUG "$DISABLED"
+	reconnect
+fi
+
+if [ -n "$CONNECTED" ]; then
+	logger -t INFO "Modem reports as connected. Checking actual connectivity."
+	checkandreconnect
+fi
+
+if [ -n "$SEARCHING" ]; then
+	logger -t INFO "Modem is searching."
+	checkandreconnect
+fi
+
+if [ -n "$IDLE" ]; then
+	logger -t INFO "Modem is idle.  Attempting to bring modem back online."
+	reconnect
+fi
+
+if [ -n "$REGISTERED" ]; then
+	logger -t INFO "Modem is registered."
+	checkandreconnect
+
+fi
+logger -t INFO "Modem hotplug script ran."
+fi
+fi

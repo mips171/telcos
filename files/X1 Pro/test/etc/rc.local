@@ -1,0 +1,17 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+#
+#
+# These commands are required by your Telco Electronics device.
+#
+# BEGINNING of required commands.
+#
+/usr/sbin/irqbalance --oneshot
+sleep 30
+/usr/bin/set_modem_in_10D_mode.sh
+sleep 30
+ifup mobiledata
+# END of required commands.
+#
+#
+exit 0

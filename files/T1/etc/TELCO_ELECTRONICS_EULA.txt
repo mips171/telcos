@@ -1,0 +1,356 @@
+### Press q to exit. Scroll with the up and down arrows. ###
+
+TERMS OF USE AND END USER LICENCE AGREEMENT
+
+About Telco Electronics
+
+We make available various products and services including the supply of the Telco Electronics T1 outdoor 4G LTE wireless router known as the Telco Electronics T1 (Products) and associated software (Software). We may from time to time by notice on our website vary our catalogue of available Products, the prices for our Products and offer additional products or services. 
+
+The terms of use for the Products and the licensing terms for use of our Software (together Terms) govern your purchase and use of the Products, the Software embedded in the Products, and your (User) access to and use of the Products and Software and any other material or documentation that we supply (our Services). 
+
+By clicking on the I accept the Terms button you as a User are indicating your acceptance of our Terms and agree to be legally bound by our Terms for the supply of our Services. If you do not accept these Terms you must not purchase and use the Products, or the Software embedded in the Products. 
+
+You also accept these Terms when you access or use our Products and Services or if you access our Site or access the systems for our Products. 
+
+We reserve the right to  update these Terms from time to time. It is your responsibility to review these Terms and to familiarise yourself with any amendments. Any changes to these Terms will be effective from the date published on our website located at http://telcoelectronics.com.au (Site). We may notify you with updates to our Terms by email, by short message service (SMS) or by posting on our Site. 
+
+Any reference herein to we, our, or us means Telco Antennas Pty Ltd (ABN: 30 145 543 951) (Telco Antennas). Any reference to you or your or User means you as a User of the Products and our Software under these Terms. 
+
+Definitions 
+
+ACMA means The Australian Communications and Media Authority. 
+
+Claim includes any demand, claim, action, proceeding, Loss, damages, costs, expenses, requisition, objection, alleged right of indemnity incurred or suffered by, or brought or made or recovered against a matter, no matter how arising (whether or not presently ascertained) in the immediate future or contingent (whether criminal or civil, in contract, tort or otherwise).
+
+Content includes all data, works and materials (including without limitation text, communications, information, messages, comments, photographs, images, audio material, video material, audio-visual material, scripts, software and files).
+
+Data means the data or files that the User uploads to or processes through the Software or otherwise Content that User provides or transmits to Telco Antennas to use or process in accordance with these Terms. 
+
+
+Intellectual Property Rights means any intellectual property including all copyright, patents, trademarks, design rights, trade secrets, circuit layouts, rights in database and data rights, domain names, knowhow, trade secrets, procedures, technical designs, software and code and other rights of a similar nature, whether registrable or not and whether registered or not, and any applications for registration or rights to make such an application.
+
+Law includes a constitutional provision, treaty, decree, convention, statute, regulation, ordinance, by-law, judgment, rule of common law or equity and is a reference to that law as amended, consolidated or replaced.
+
+Liability means any debt, obligation, cost (including legal costs, deductibles or increased premiums), expense, Loss, damage, compensation, charge or liability of any kind, including those arising from third party Claims, those that are prospective or contingent and those the amount of which is not ascertained or ascertainable, and whether arising under breach of contract, in tore (including negligence), restitution, pursuant to statute or otherwise at law or in equity.  
+
+Loss means any cost, expense, loss, damage or Liability whether direct, indirect or consequential (including pure economic loss), present or future, ascertained or unascertained, actual, prospective or contingent, or any fine or penalty and includes legal costs.
+
+Products refers to the Telco Electronics T1 outdoor 4G LTE wireless router and where applicable other products listed for sale on our Site. 
+
+Works means any literary, dramatic, musical or artistic work pursuant to Part III of the Copyright Act 1968 (Cth) and any Part IV subject matter such as cine-films, sound recordings, publications, television broadcasts including any rights in performances.
+
+Use of the Software and Products 
+
+You must be 18 years or older to purchase our Products and use our Services. By using our Products and Services, you warrant that you are of legal age to form a binding contact with us. 
+
+If you are entering into these Terms on behalf of any legal entity with which you are associated, you warrant that you have full legal capacity and authority to enter into these Terms on behalf of the legal entity. 
+
+Licences and Maintenance
+
+Subject to compliance with these Terms, we grants User a limited, non-exclusive, non-sub-licensable, non-transferable licence to use the Software imbedded in the Products.
+ 
+You accept that Telco Antennas owns the Intellectual Property Rights in the Software and you shall have no right to distribute, license, sell, supply or make available the Software to any third party to use or commercialise unless any part of the Software is open source software in the event of which your use of the open source software  shall be subject to the terms and conditions of the applicable open source license. 
+
+You must not modify or disassemble the Products or Software. User agrees to operate the Products and the Software in compliance with all Laws including any of ACMAs device compliance level requirements, regulations, industry codes, industry standards and technical standards. 
+
+You acknowledge that it is your responsibility to have the appropriate software, hardware and Internet connection to operate our Products. You warrant that you are the owner of or are authorised to use your Data and are solely response for all of the Data that you use in connection with our Products and Services. 
+
+User grants to Telco Antennas a licence to use, transmit and process its Data to enable Telco Antennas to carry out its obligations under these Terms. You grant to Telco Antennas a license to use your Data for its internal data analytics purposes to faciliate and improve the provision of its Products and Services. User warrants that it is authorised to use the Data and that the Data does not infringe any Intellectual Property Rights and User is solely responsible for the enforcement of its Intellectual Property Rights in the Data. 
+
+You must accept and use the Software included in the Products at the time of purchase. The supply of the Software will include the provision of updates, new releases and maintenance to the Software (collectively Maintenance) as they become available. 
+
+Maintenance may include variations to the existing features of the Software and the addition of new features to the Software. 
+
+These Terms apply in all respects to the Maintenance to the extent that it is incorporated in or replaces the Software.
+
+User is responsible for installing and downloading any available updates that Telco Antennas may release for the Software. User agrees that updates may be required to fix issues with the software contained in the Software or otherwise to improve the Softwares functionality.
+
+User agrees that the Software may also automatically download and install upgrades, updates, or other new features and that some data charges may apply. 
+
+User agrees:
+
+to only use the Products and Software for the purpose for which it was created;
+
+to not reverse engineer, disassemble, or decompile the Software, create derivative works based on the Software, or otherwise attempt to gain access to its method of operation or source code.
+
+must not introduce any malicious software or technically harmful data or otherwise attempt to or modify or interfere with the Software or Products;
+
+must not remove, disable, modify, add to or tamper with any program code or data, copyright, trade mark or other proprietary notices contained in the Software or Products.
+
+
+User Accounts
+
+To obtain full access to our Services, Users may be required sign up for an account (Account) on the Site and agree to these Terms. 
+
+During the registration process for an Account, Users will be requested to provide the following information:
+
+name;
+email address;
+mailing address;
+telephone number;
+User ID and password (Login Details);
+any other information as specified in the Account interface;
+
+(Registration Information)
+
+After registration, you may login into your Account with your Login Details to gain access to the Services by placing an order (Order) for our Products. A contract comes into existence for the supply of the Products once acceptance of the Order is made by Telco Antennas. Any Order not accepted by Telco Antennas will be regarded as having been refused by Telco Antennas. 
+
+Your Account is not transferable and you must not impersonate, misrepresent your identity or imitate any person when registering for an Account. 
+You warrant that any Registration Information you provide to us during the registration process will be accurate, correct and up to date. You are solely responsible for the accuracy of the Registration Information that you submit in relation to orders for the Products. You agree that we do no control, verify or endorse that information. If your Registration Information changes, you must promptly update your Account to reflect those changes. 
+Telco Antennas may without notice terminate your Account and your access to the Services including any Registration Data in it or associated with it:
+
+at any time for a breach of these Terms in the sole discretion of Telco Antennas, or
+(ii)	if there is no account activity associated with your Member Account for over 12 months. 
+
+You acknowledge that Telco Antennas will use the email you provide as the primary method for communication and agree to receive e-correspondence and other media from Telco Antennas which will always have an unsubscribe function listed at the foot of the e-correspondence.  
+
+Your access to the Services will be disabled when your Account is suspended, terminated or ends. 
+
+Account Security
+
+Users acknowledge that they are entirely responsible for all activities that occur under their Account. It is your sole responsibility to maintain the confidentiality of your Account and the secrecy of your Login Details. 
+
+Telco Antennas will not be liable for any Loss or damage from Users failure to maintain the security of their Account or Login Details. User must immediately notify Telco Antennas of any unauthorised use of their Account or any other breach of security known to User. 
+
+Purchase of Products and Services
+
+In using the Services to purchase our Products, you agree to the payment of the purchase price listed on the Website for the Products from time to time (the 'Purchase Price').
+
+Our fees for the Purchase Price are in Australian Dollars (AUD). Fees may be converted to your local currency at the time of your Order if we accept an Order for delivery outside of Australia. We reserve the right in our sole discretion to reject an Order for delivery outside of Australia. We will be entitled to add on GST for any supply in Australia. 
+
+(c)	Payment of the Purchase Price may be made through the third-party provider made available on the Site ('Payment Gateway Provider'). Upon completion of sign up for our Services, Telco Antennas will create a Payment Gateway Provider checkout account on your behalf. 
+(d)	In using the Services, you warrant that you have familiarised yourself with, and agree to be bound by, the applicable Terms and Conditions of Use, Privacy Policy and other relevant legal documentation provided by Payment Gateway Provider. You acknowledge that the Payment Gateway Provider will be your default payment gateway and it is your sole responsibility to:
+keep the Payment Gateway Provider Account active, and 
+(ii)	to deactivate the   Payment Gateway Provider Account if you do not wish to keep the account active.
+
+Payment must be made in full at the time of placing an Order. We will not hold Products against your Order if payment is not made in full or if payment is declined by your bank or credit card issuer. Members are responsible for ensuring their credit card details are accurate and up to date when purchasing our Products. 
+When we confirm payment of the Purchase Price and accept your Order, you will be issued with a receipt to confirm that your payment has been received. You agree that Telco Antennas may electronically store your Registration Information and your purchase details for future use. 
+You are responsible for any use, activities and the payments associated with your Order. Telco Antennas reserves the right to cancel, suspend or reject an Order for the purchase of Products including on the following grounds:
+the inability to authorise or process any payment including a credit card payment; or
+if any misuse of your Member Account is detected. 
+
+Telco Antennas may in its sole discretion elect not to accept an Order from you. If your credit card has been charged and we have rejected your Order, we will issue a credit to your credit card account within 14 calendar days.
+
+
+Title and Risk
+
+(a)	Title to the Products shall remain with Telco Antennas until you have paid the full invoice price for the Products. 
+
+(b)	The risk in the Products will pass from Telco Antennas to you at the earlier of:
+
+time of payment of Telcos Antennas tax invoice in full, or
+(ii)	time of delivery of the Products to the point of delivery in the Order.
+
+From that time on, you assume all risk of Loss and damage to the Products including without limitation all Loss or damage in the course of unloading the Products following delivery. 
+
+9.	Returns and Refund Policy
+Our Products come with guarantees that cannot be excluded under the Australian Consumer Law. 
+
+You are entitled to a replacement or refund for a major failure of the Product. You are also entitled to have the Products repaired or replaced if the Products fail to be of acceptable quality and the failure does not amount to a major failure.
+
+It is your responsibility to inspect your Products on delivery. Should your Products be defective upon receipt, not match the description or are not fit for the purpose specified, Telco Antennas will offer a full refund, replacement or repair of the Products in accordance with its obligations under the Australian Consumer Law. 
+
+For defective merchandise, you must contact us within 14 calendar days of delivery to report any discrepancies or faults to make a claim otherwise you will be deemed to have accepted the Products. Please contact us by phone or email at How to Contact Us. 
+
+You are responsible for returning the Products to Telco Antennas. Defective products will only be accepted for credit within 14 calendar days of the date of delivery and must be accompanied by the receipt and a reason for the return so that we can identify the transaction and assess the legitimacy of the fault. You acknowledge and agree that you are liable for any postage and shipping costs associated with any refund pursuant to this clause.
+
+Returns will only be considered for Products in original condition (preferably in original packaging). Products that have been modified or excessively handled will not be accepted as a return. No credit will be allowed for Products that have been used, modified or damaged or used in a manner or purpose for which the Product was not intended. 
+
+Returns or refunds are made in our discretion subject to any guarantees that cannot be excluded under the Australian Consumer Law.
+
+Except as required by the Australian Consumer Law, we will only facilitate a refund if we are unable to facilitate the processing of an Order or if we determine, in our discretion, that it is reasonable to do so.
+
+
+
+
+10.	Warranty
+You may make a claim under this clause (the 'Warranty Claim') for material defects and workmanship in the Products within 12 months from the date of purchase (the 'Warranty Period'). 
+
+This warranty does not apply to any defect in the Products arising from:
+
+Fair wear and tear
+Incorrect assembly or not installed or maintained in accordance with accompanying documentation
+Inadequate storage
+Inappropriate cleaning 
+Misuse
+Lack of maintenance
+The Product has been modified in anyway
+Product used in a manner or purpose for which the Product was not intended
+Repaired or serviced by someone other than Telco Antennas
+Damage to Products due to events out of our control including Force Majeure once the Products are delivered to you. 
+
+Products that have been modified or excessively handled will not be accepted as a return. The Warranty does not apply to any appearance of the supplied Products nor to any Products where the exterior has been damaged or defaced, which has been subjected to misuse, abnormal service or handling, or which has been altered or modified in design or construction.
+
+You are responsible for maintaining all documentation required to produce a warranty claim for the Products. In order to make a Warranty Claim during the Warranty Period, you must provide proof of purchase to Telco Antennas showing the date of purchase of the Products, provide a description of the Products and the price paid for the Products by sending the Product and written notice to Telco Antennas at How to Contact Us. 
+
+Where the Warranty Claim is accepted then Telco Antennas will, at its sole discretion, either repair or replace any defective Products or part thereof with a new or remanufactured equivalent during the Warranty Period at no charge to you for parts or labour. If you reside in Australia, Telco Antennas will be responsible for the return postage or shipping costs to facilitate your Warranty Claim for Orders. If you reside outside Australia, you acknowledge and agree that you will be responsible for all postage or shipping costs outside of Australia to facilitate your Warranty Claim for Orders.
+
+The Warranty shall be the sole and exclusive warranty granted by Telco Antennas and shall be the sole and exclusive remedy available to you in addition to other rights and under a law in relation to the Products to which this warranty relates.
+
+All implied warranties including the warranties of merchantability and fitness for use are limited to the Warranty Period.
+
+Save for those express warranties provided in these Terms and to the maximum extent permitted by law, Telco Antennas does not give any other express warranty or representation of any kind in relation to any Products supplied under these Terms. 
+
+You agree that the Products are provided as is and specific results cannot be guaranteed. It is your sole responsibility to determine that the Product meets your needs or is otherwise suitable for the purposes for which it is used.
+
+Copyright and Intellectual Property
+
+User acknowledges that ownership of the Intellectual Property Rights in the Products and Software is the property of or licensed by Telco Antennas or vests on creation in Telco Antennas. 
+
+The Works on the Software and any Content related to the Services (Copyright Material) are subject to copyright and owned by the copyright owner. 
+
+The Copyright Material on the Software is protected by copyright under the laws of Australia and through international treaties. Unless otherwise indicated, all rights (including copyright) in the Services and compilation of the Software and on the Site (including but not limited to text, graphics, logos, button icons, video images, audio clips, code, scripts, design elements and interactive features) are owned or controlled by Telco Antennas or any related entities. 
+
+Telco Antennas retains all rights, title and interest in and to the Software and all related products and services. Nothing you do on or in relation to the Software will transfer any:
+
+business name, trading name, domain name, trade mark, industrial design, patent, registered design or copyright, or
+
+a right to use or exploit a business name, trading name, domain name, trade mark or industrial design, or
+
+a thing, system or process that is the subject of a patent, registered design or copyright (or an adaptation or modification of such a thing, system or process), to you.
+
+Any reproduction or redistribution of the Intellectual Property or Works in the Software and not in accordance with these Terms is explicitly prohibited and may result in the termination of Users Account as well as legal action taken against a User. 
+
+General Disclaimer
+
+Use of the Products and Services is at your own risk. None of the affiliates, directors, officers, employees, agents, contributors and licensors of Telco Antennas make any express or implied representation or warranty about the Products and Software except as provided in these Terms. This includes (but is not restricted to) Loss or damage you might suffer as a result of any of the following:
+
+failure of performance, error, omission, interruption, deletion, defect, failure to correct defects, delay in operation or transmission, computer virus or other harmful component, loss of data, communication line failure, unlawful third-party conduct, or theft, destruction, alteration or unauthorised access to records;
+
+the accuracy, suitability or currency of any information on the Products and Software (including third party material and advertisements on the Products and Software); 
+
+and any Claims or Liability incurred as a result of you using the Products and Software or any other related products or services of Telco Antennas.
+
+User must read the Products and Software instructions before use and should test the Products to ensure that the Products is synced with the Software.
+
+Telco Antennas does not warrant that the Products and Software, or any other related products or services will be error-free, uninterrupted or free of bugs or viruses. 
+It is Users sole responsibility to determine that the Software, Products, or any other related products or services meet the needs of the User or are otherwise suitable for the purpose for which they are purchased or used. 
+
+Limitation of Liability
+
+(a)	To the extent permissible at law, you agree that we, our affiliates or subsidiaries, or any of our directors, officers, employees, partners, agents, contributors, and licensors shall not be liable to you or any third party for any:
+
+loss of profit or opportunity (whether incurred directly or indirectly); 
+damage to goodwill or business reputation and any other intangible loss;
+special, direct, indirect, incidental, punitive, exemplary or consequential damages whatsoever or any other losses, costs or expenses of any kind, including loss of data, legal fees, expert fees, cost of procuring substitute services, or any other disbursements
+
+arising, directly or indirectly, from your reliance on, access to, use of, or inability to access or use, the Products, the Services and any other Content provided therein, or through downloading of any materials, data, text, images, video or audio from the Services, whether in common law, under contract, tort (including negligence), in equity, pursuant to statute or otherwise.
+
+Except as provided in these Terms, Telco Antennas  makes no warranties or representations regarding the Content of the Services, or the Content of any sites linked to the Services, or that the Products and our Services will be uninterrupted or error-free. Telco Antennas  assumes no liability or responsibility for any:
+
+errors, defects, mistakes, or inaccuracies of the Products and Services;
+interruption or cessation of transmission of the Products and Services;
+bugs, viruses, harmful components, trojan horses, or the like which may be transmitted to or through the Services by any third party;
+errors or omissions in any Content or for any loss or damage of any kind incurred because of the use of any Content posted, emailed, transmitted, or otherwise made available via the Services;
+human action or inaction of any computer system, phone line, hardware, software or program malfunctions, or any other errors, failures or delays in computer transmissions or network connections through your access to or use of the Services;
+quality, accuracy, completeness and validity of any information or materials in connection with the Products and Services. 
+
+Our Services are provided as is and specific results cannot be guaranteed. It is your sole responsibility to determine that the Products and Services or any part of these meet your needs or are otherwise suitable for the purposes for which they are used. 
+
+These Terms are to be read subject to any legislation that prohibits or restricts the exclusion, restriction or modification of any implied warranties, conditions, guarantees or obligations. If such legislation applies, to the extent possible Telco Antennas  limits our Liability as follows, at our option:
+
+for any Claims relating to these Terms, to the fees payable under this agreement (if applicable) for the preceding one (1) month;
+in the case of products including any digital products (a) the replacement of the products or the supply of equivalent products; (b) the repair of the products; (c) the payment of the cost of replacing the products or of acquiring equivalent products; or (d) the payment of having the products repaired; or
+in the case of services, the supply of the services again or the payment of the cost of having the services supplied again.
+
+This limitation applies to any supply under or related to these Terms including the supply of the Services and covers loss of Data, any viruses or other disabling features that affect your access to or use of our Products and Services, incompatibility between our Products and Services and your hardware or software, delays or failures you may have in using the Products and Services including any connections or transmissions that fail or are not completed in an accurate or timely manner. 
+
+Save to any extent expressly provided otherwise in these Terms or as otherwise required by law, you agree that we will not:
+
+pay you any compensation or other payment upon the discontinuance or alteration of the Products and Services in any way; and
+
+reimburse you for any costs whatsoever incurred because of you using the Products and Services, or any other features provided in connection to the Products and Services, whether purchased or distributed for free.
+
+Our total Liability arising out of or in connection with the Products and Services or under these Terms, however arising, whether at common law, under contract, tort (including negligence), in equity, under statute or otherwise, will not exceed at our option the resupply of the Products and Services to you. Our aggregate Liability to you in respect of any contract to provide the Products and Services to you under these Terms shall not exceed the greater of the total amount paid by you and payable to us for providing you with the Products and Services. 
+
+This clause survives the termination or expiry of these Terms for whatever reason.
+
+Indemnity
+
+User agrees to defend, indemnify and hold Telco Antennas, our affiliates, employees, agents, contributors, third party content providers and licensors harmless from and against all actions, suits, Claims, demands, Liabilities, costs, expenses, Losses and damage (including legal fees on a full indemnity basis) brought against or sustained by Telco Antennas, which:
+
+is directly or indirectly caused by Users breach of these Terms;
+is directly or indirectly caused by any wilful, reckless or negligent act of User.
+
+Except as required by Law, Telco Antennas will not be liable for any Claim, Loss or Liability for personal injury, death or damage to User or its property however it may be caused.
+
+Telco Antennas reserve the right, at our own expense, to assume the exclusive defence and control of any matter otherwise subject to indemnification by User, and in such case, User agrees to cooperate with our defence of such claim
+
+In no event will Telco Antennas be liable to User for any indirect, incidental or consequential damages including, without limitation, direct, indirect, special, punitive, or exemplary damages.
+
+Dispute Resolution
+
+If a dispute arises out of or relates to the Terms as between Telco Antennas and a User, either party may not commence any Tribunal or Court proceedings in relation to the dispute, unless the following clauses have been complied with (except where urgent interlocutory relief is sought). 
+
+Compulsory process. A Party shall not start arbitration or court proceedings (except proceedings seeking interlocutory relief) in respect of a Dispute unless it has complied with this clause.
+
+Notification. A Party claiming that a Dispute has arisen shall notify each other party to the Dispute giving details of the Dispute.
+
+Initial period Ã¢â‚¬â€œ efforts to resolve Dispute. During the 30-day period after a notice is given (or longer period agreed in writing by the Parties to the Dispute) (Initial Period) each Party to the Dispute (Disputant) covenants with the other to cooperate and take all reasonable steps necessary to attempt to resolve the Dispute.
+
+Mediation. If the Disputants are unable to resolve the Dispute within the Initial Period, each Disputant agrees that the Dispute shall be referred for mediation, at the request of any Disputant, to:
+
+a mediator agreed on by the Disputants; or
+if the Disputants are unable to agree on a mediator within seven days after the end of the Initial Period, then the Parties must submit the dispute for mediation through the Chair of Resolution Institute (ACN 008 651 232) or the Chairs designated representative and the Resolution Institute Mediation Rules shall apply to the mediation.
+
+Role of mediator. The role of any mediator is to assist in negotiating a resolution of the Dispute. A mediator may not make a decision that is binding on a Disputant unless that Disputant has so agreed in writing.
+
+Information. Any information or documentation disclosed by a Disputant under this clause shall be kept confidential and may not be used except to attempt to resolve the Dispute.
+
+Costs of mediation. Each Disputant shall pay its own costs of complying with this clause. The Disputants shall pay equally the costs of any mediator engaged.
+
+Location, timing and attendance. The mediation will be held in Brisbane, Australia, within 30 days after expiry of the Initial Period. Each Disputant agrees to attend the mediation by a representative having full authority to resolve the dispute. At the mediation each Disputant may be represented by one or more legal representative.
+
+Failure to resolve. If the dispute fails to resolve at mediation or if one of the Disputants fails or refuses to attend the mediation, the mediator will be requested to inform each Disputant in writing that the mediation has been terminated without resolution (Mediation Termination Notice). Upon receipt of Mediation Termination Notice, the dispute resolution process will be terminated. A party to a dispute will only be entitled to pursue other remedies available to it at law or otherwise, after receipt of Mediation Termination Notice.
+
+Confidentiality. All communications concerning negotiations made by the Disputants arising out of and in connection with this dispute resolution clause are confidential and to the extent possible, must be treated as without prejudice negotiations for the purpose of applicable law of evidence.
+
+Third Party Sites and Advertising
+
+The Site may contain advertisements from third parties, and other pointers to websites or applications operated by third parties. We do not control these linked websites and are not responsible for the Content of any linked websites. 
+
+Telco Antennas makes no representation or warranty regarding any goods or services provided by any third party and will not be liable for any Claim relating to any third-party Content, goods or services. 
+
+Links to third party websites and advertising are provided solely for your convenience and do not indicate, expressly or impliedly, any endorsement, sponsorship, association, or affiliation by us of those applications or the products or services provided at those websites. Your access to any such website is entirely at your own risk. 
+
+Feedback and Authorisations
+
+Your feedback is important to us. Telco Antennas encourages you to provide feedback, reviews, comments and suggestions for improvements to the Products and Software, or any other products or services of Telco Antennas ("Feedback"). You may submit Feedback by contacting us using the contact details provided below.
+
+No waiver
+
+No waiver of rights under these Terms or any of our policy, or agreement between us and a User shall constitute a subsequent waiver of this or any other right.
+
+20.	Assignment
+
+User agrees that we may assign, transfer, sub-contract or otherwise deal with our rights or obligations under these Terms. User may not assign, transfer, sub-contract or otherwise deal with any of your rights or obligations under these Terms. 
+
+
+
+
+21.	Entire Agreement
+
+Unless otherwise stated, these Terms and our Privacy Policy make up the entire agreement between User and Telco Antennas regarding the Software and supersede any prior agreements. 
+
+22.	Severability
+
+If any provision or part of a provision of these Terms is found to be invalid, unenforceable or in conflict with the law, that part or provision is to be replaced with a provision which, as far as possible, accomplishes the original purpose of that provision otherwise it is to be read down or severed to the extent necessary without affecting the validity or enforceability of the remaining provisions which will continue in full force and effect.      
+
+23.	Law and Jurisdiction
+
+These Terms are governed by and construed in accordance with Australian law. You irrevocably submit to the non-exclusive jurisdiction of the Courts of Brisbane, Australia, and any court that may hear appeals from any of those courts for determining any dispute concerning these Terms and waive any right you may have to claim that those courts are an inconvenient forum. 
+
+24.	Force Majeure
+
+Telco Antennas, its affiliates or subsidiaries, directors, officers, employees, agents, contributors and licensors are not liable for any changes or problems out of our control, for example changes or problems caused by natural disasters, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, network infrastructure failures, strikes, or shortages of transportation facilities, fuel, energy, labour or materials.
+
+How to Contact Us
+
+You can contact us:
+
+using our support page provided on our Site located at http://telcoelectronics.com.au
+by email at sales@telcoantennas.com.au
+
+© 2019 Telco Antennas. All Rights Reserved.
+
+Terms last updated 15 April 2019. 

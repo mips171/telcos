@@ -1,5 +1,5 @@
 #!/bin/sh
-uci set system.@system[0].osstring='TelcOS 1.1.1-engineering Melaleuca'
+uci set system.@system[0].osstring='TelcOS 1.2 Melaleuca'
 uci set system.@system[0].hostname='TelcoElectronicsT1'
 uci set system.@system[0].zonename='Australia/Brisbane'
 uci set system.@system[0].timezone='AEST-10'
