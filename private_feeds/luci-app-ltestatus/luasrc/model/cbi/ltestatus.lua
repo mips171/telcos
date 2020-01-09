@@ -42,7 +42,7 @@ if has_mmcli then
         local mobile_snr    = luci.sys.exec("grep 's/n:' /tmp/modemsignal | sed 's/^.*: //'")
         local mobile_rscp    = luci.sys.exec("grep 'rscp:' /tmp/modemsignal | sed 's/^.*: //'")
         local mobile_ecio    = luci.sys.exec("grep 'ecio:' /tmp/modemsignal | sed 's/^.*: //'")
-	    local mobile_percentage = luci.sys.exec("grep quality /tmp/modemstatus | sed 's/.*: //' | tr -cd [:digit:] ")
+		local mobile_percentage = luci.sys.exec("grep quality /tmp/modemstatus | sed 's/[^0-9]*//g'")
 
         local sim_missing   = luci.sys.exec("grep 'sim-missing' /tmp/modemstatus | sed 's/.*: //' | tr -d \"'\"")
 
@@ -110,7 +110,7 @@ if has_mmcli then
 	if string.match(access_tech, "LTE") then
 	        signal_info = signal_header ..  msg_rssi .. msg_rsrq .. msg_rsrp .. msg_snr .. msg_percent .. msg_location .. active_band .. adv_mobile_info
 	    elseif string.match(access_tech, "UMTS") then
-	        signal_info = signal_header ..  msg_rssi .. msg_rscp .. msg_ecio .. msg_percent .. msg_location .. active_band
+	        signal_info = signal_header ..  msg_rssi .. msg_ecio .. msg_percent .. msg_location .. active_band
 	    elseif string.match(access_tech, "UNKNOWN") then
 			modem_info = minfo_header .. msg_imei
 			signal_info = signal_header .. msg_rssi .. msg_percent .. msg_location .. active_band
