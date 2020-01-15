@@ -1,4 +1,0 @@
-#!/bin/sh
-uci add_list firewall.@zone[1].network=mobiledata
-uci set firewall.@zone[1].conntrack=1
-uci commit firewall

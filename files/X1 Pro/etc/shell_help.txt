@@ -47,4 +47,8 @@ In addition to a full BusyBox shell, GNU core utilities, and Linux commands
 	modemdebugmode_on	Put the modem into debug mode, allows running of AT commands
 	modemdebugmode_off	Take the modem out of debug mode
 	rma_modem		Perform RMA Reset on modem, clears all settings e.g. locked bands
-	
+
+  Administration:
+	refresh_ssl_certs	Regenerate the SSL certificates used for HTTPS and restart
+				  the web server.
+
