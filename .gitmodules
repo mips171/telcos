@@ -4,3 +4,6 @@
 [submodule "telcos_luci"]
 	path = telcos_luci
 	url = git@github.com:nickberry17/telcos_luci.git
+[submodule "telcos_private_feeds"]
+	path = telcos_private_feeds
+	url = git@github.com:nickberry17/telcos_private_feeds.git
