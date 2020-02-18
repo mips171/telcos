@@ -7,6 +7,7 @@
 # Copyright 2019 Telco Antennas Pty Ltd.
 # Nicholas Smith <nicholas.smith@telcoantennas.com.au>
 #
+
 if [ $(cat /etc/modemsettings/modem_in_10D) = "false" ]; then
 
 	logger -t INFO "Stopping ModemManager service."
@@ -14,21 +15,23 @@ if [ $(cat /etc/modemsettings/modem_in_10D) = "false" ]; then
 	sleep 5
 	/etc/init.d/modemmanager stop
 	sleep 5
-
 	logger -t INFO "Entering Sierra Wireless admin mode."
 	printf "AT!ENTERCND=\"A710\"\r" > /dev/ttyUSB2
 	sleep 1
-
+	logger -t INFO "Unlocking modem bands."
+	printf "AT!BAND=00\r" > /dev/ttyUSB2
+	sleep 1
 	logger -t INFO "Issuing command."
-	printf "AT!USBCOMP=1,3,1009\r" > /dev/ttyUSB2
+	qmicli -p -d /dev/cdc-wdm0 --dms-swi-set-usb-composition=6
 	sleep 1
 
 	logger -t INFO "Resetting modem."
-	printf "AT!RESET\r" > /dev/ttyUSB2
-	sleep 15
+	qmicli -p -d /dev/cdc-wdm0 --dms-set-operating-mode=offline
+	sleep 2
+	qmicli -p -d /dev/cdc-wdm0 --dms-set-operating-mode=reset
 	echo "true" > /etc/modemsettings/modem_in_10D
 	logger -t INFO "Restarting ModemManager service."
-	/etc/init.d/modemmanager start
+	/etc/init.d/modemmanager restart && ifup mobiledata
 	
 else
 	logger -t INFO "Modem already is in 10D mode."

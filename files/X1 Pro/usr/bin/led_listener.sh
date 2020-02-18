@@ -6,11 +6,13 @@
 	fair=50
 	good=80
 	excellent=90
-mmcli -m 0 --signal-setup=3
+MODEMINDEX="$(/usr/bin/mmcli -L -K  | grep -Eo '/org/freedesktop/.*' | tr -d "'")"
+
+mmcli -m $MODEMINDEX --signal-setup=3
 
 while :
 	do
-		mmcli -m 0 > /tmp/modemstatus
+		mmcli -m $MODEMINDEX > /tmp/modemstatus
 		sigvalue=$(grep quality /tmp/modemstatus | sed 's/.*: //' | tr -cd [:digit:])
 		if [[ "$sigvalue" -eq "$(cat /tmp/lastSigValue)" ]]
 		then
@@ -45,4 +47,3 @@ while :
 		fi
 		sleep 5
 done
-

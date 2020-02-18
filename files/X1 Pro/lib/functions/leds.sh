@@ -80,11 +80,10 @@ status_led_blink_failsafe() {
 }
 
 status_led_blink_preinit_regular() {
-	led_timer tel-t1:blue:signal3 300 1600
-	led_timer tel-t1:blue:signal2 300 600
-	led_timer tel-t1:blue:signal1 300 1600
+	led_timer tel-t1:blue:signal3 250 750
+	led_timer tel-t1:blue:signal2 250 750
+	led_timer tel-t1:blue:signal1 250 750
 	led_on tel-t1:blue:wan
 	led_on tel-t1:blue:lan
 	led_on tel-t1:blue:wlan
-
 }
