@@ -55,35 +55,21 @@ status_led_off() {
 }
 
 status_led_blink_slow() {
-	led_timer $status_led 1000 1000
+	led_timer u4019:green:led2 1000 1000
 }
 
 status_led_blink_fast() {
-	led_timer $status_led 100 100
-	led_timer tel-t1:blue:signal1 100 100
-	led_timer tel-t1:blue:signal2 100 100
-	led_timer tel-t1:blue:signal3 100 100
+	led_timer u4019:green:led2 100 100
 }
 
 status_led_blink_preinit() {
-	led_timer $status_led 100 100
-	led_timer tel-t1:blue:signal1 200 200
-	led_timer tel-t1:blue:signal2 200 200
-	led_timer tel-t1:blue:signal3 200 200 
+	led_timer u4019:green:led2 200 200
 }
 
 status_led_blink_failsafe() {
-	led_timer $status_led 50 50
-	led_timer tel-t1:blue:signal1 50 50
-	led_timer tel-t1:blue:signal2 50 50
-	led_timer tel-t1:blue:signal3 50 50
+	led_timer u4019:green:led2 50 50
 }
 
 status_led_blink_preinit_regular() {
-	led_timer tel-t1:blue:signal3 250 750
-	led_timer tel-t1:blue:signal2 250 750
-	led_timer tel-t1:blue:signal1 250 750
-	led_on tel-t1:blue:wan
-	led_on tel-t1:blue:lan
-	led_on tel-t1:blue:wlan
+	led_timer u4019:green:led2 300 700
 }

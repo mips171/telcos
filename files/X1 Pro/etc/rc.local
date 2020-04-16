@@ -10,8 +10,6 @@ sleep 20
 /usr/sbin/irqbalance --oneshot
 #/usr/bin/set_modem_in_10D_mode.sh
 ifup mobiledata
-/etc/init.d/cron enable
-/etc/init.d/cron start
 #
 # END of required commands.
 #

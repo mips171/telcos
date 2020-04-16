@@ -2,11 +2,12 @@
 #modem=$(mmcli -m 0 | grep "device: " | grep -Eo "/sys/devices/.*" | tr -d "'")
 #modem="/sys/devices/platform/1e1c0000.xhci/usb2/2-1"
 #modem="/sys/devices/platform/ehci-platform/usb1/1-1"
-#modem="/sys/devices/platform/ahb/1b000000.usb/usb1/1-1"
-#modem="/sys/devices/platform/soc/8af8800.usb3/8a00000.dwc3/xhci-hcd.0.auto/usb1/1-1"
+#em7565modem="/sys/devices/platform/ahb/1b000000.usb/usb1/1-1"
+#em20modem="/sys/devices/platform/soc/8af8800.usb3/8a00000.dwc3/xhci-hcd.0.auto/usb1/1-1"
+#em12modem="/sys/devices/platform/soc/8af8800.usb3/8a00000.dwc3/xhci-hcd.0.auto/usb1/1-1"
 uci set network.mobiledata=interface
 uci set network.mobiledata.proto=modemmanager
-uci set network.mobiledata.device="/sys/devices/platform/soc/8af8800.usb3/8a00000.dwc3/xhci-hcd.0.auto/usb1/1-1"
+uci set network.mobiledata.device="/sys/devices/platform/soc/8af8800.usb3/8a00000.dwc3/xhci-hcd.0.auto/usb2/2-1"
 #uci set network.mobiledata.sim=1
 uci set network.mobiledata.metric=50
 #uci set network.mobiledata.sim1apn=internet
