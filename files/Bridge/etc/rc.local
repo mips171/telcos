@@ -1,0 +1,12 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+#
+#
+# These commands are required by your Telco Electronics device.
+#
+# BEGINNING of required commands.
+#
+# END of required commands.
+#
+#
+exit 0
