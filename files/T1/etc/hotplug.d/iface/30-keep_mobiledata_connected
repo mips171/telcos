@@ -9,6 +9,13 @@ stop_modem_service_and_interface() {
 	ifdown mobiledata
 }
 
+reconnect() {
+	logger -t INFO "Reconnecting modem now."
+	/etc/init.d/modemmanager stop && sleep 2 && /etc/init.d/modemmanager start
+	ifup $MODEMIFACE
+	exit
+}
+
 checkandreconnect() {
 	logger -t INFO "Giving 10 extra seconds to complete modem setup."
 	sleep 10
@@ -16,19 +23,11 @@ checkandreconnect() {
 	ping -c3 -s56 -w30 www.telcoantennas.com.au
 	if [ $? -eq 0 ]; then
 		logger -t INFO "Modem is connected. 3 successful pings."
+		exit
 	else
 		logger -t INFO "Modem failed ping test. Reconnecting."
-		/etc/init.d/modemmanager stop && sleep 2 && /etc/init.d/modemmanager start
-		ifup $MODEMIFACE
-		exit
+		reconnect
 	fi
-}
-
-reconnect() {
-	logger -t INFO "Reconnecting modem now."
-	/etc/init.d/modemmanager stop && sleep 2 && /etc/init.d/modemmanager start
-	ifup $MODEMIFACE
-	exit
 }
 
 if [ "$INTERFACE" = "mobiledata" ]; then
