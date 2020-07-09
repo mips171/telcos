@@ -4,20 +4,10 @@
 #
 # Copyright 2019 Nicholas Smith <mips171@icloud.com>
 #
-
-if [ "$INTERFACE" = "mobiledata" ]; then
-if [ "$ACTION" != "ifup" ]; then
-MODEMIFACE="mobiledata"
-MODEMINDEX="$(/usr/bin/mmcli -L -K  | grep -Eo '/org/freedesktop/.*' | tr -d "'")"
-/usr/bin/mmcli -m $MODEMINDEX > /tmp/modemStatus
-
-DISABLED=$(grep -w "disabled" /tmp/modemStatus)
-SEARCHING=$(grep -w "searching" /tmp/modemStatus)
-REGISTERED=$(grep -w "registered" /tmp/modemStatus)
-CONNECTED=$(grep -w "connected" /tmp/modemStatus)
-IDLE=$(grep -w "idle" /tmp/modemStatus)
-
-RUNNING="0" # A sort of lock
+stop_modem_service_and_interface() {
+	/etc/init.d/modemmanager stop
+	ifdown mobiledata
+}
 
 checkandreconnect() {
 	logger -t INFO "Giving 10 extra seconds to complete modem setup."
@@ -27,58 +17,103 @@ checkandreconnect() {
 	if [ $? -eq 0 ]; then
 		logger -t INFO "Modem is connected. 3 successful pings."
 	else
-                if [ "$RUNNING" -eq "0" ]; then
-                        RUNNING="1"
-                        logger -t INFO "Modem failed ping test. Reconnecting."
-                        /etc/init.d/modemmanager stop && sleep 2 && /etc/init.d/modemmanager start
-                        ifup $MODEMIFACE
-                        RUNNING="0"
-		else
-			logger -t INFO "Modem is already reconnecting. Stopping."
-                fi
+		logger -t INFO "Modem failed ping test. Reconnecting."
+		/etc/init.d/modemmanager stop && sleep 2 && /etc/init.d/modemmanager start
+		ifup $MODEMIFACE
+		exit
 	fi
 }
 
 reconnect() {
-        if [ "$RUNNING" -eq "0" ]; then
-		RUNNING="1"
-		logger -t INFO "Reconnecting modem now."
-		/etc/init.d/modemmanager stop && sleep 2 && /etc/init.d/modemmanager start
-		ifup $MODEMIFACE
-		RUNNING="0"
-	else
-		logger -t INFO "Modem is already reconnecting. Stopping."
-	fi
+	logger -t INFO "Reconnecting modem now."
+	/etc/init.d/modemmanager stop && sleep 2 && /etc/init.d/modemmanager start
+	ifup $MODEMIFACE
+	exit
 }
 
-logger -t INFO "Hotplug: Modem Hotplug script is running."
 
-if [ -n "$DISABLED" ]; then
-	logger -t INFO	"Modem is disabled. Will attempt to initiate connection."
-	logger -t DEBUG "$DISABLED"
-	reconnect
+if [ "$INTERFACE" = "mobiledata" ]; then
+	if [ "$ACTION" != "ifup" ]; then
+		if [ "$(cat /var/mm_hotplug_lock)" = "0" ]; then
+			echo 1 >/var/mm_hotplug_lock
+			MODEM_IS_OFF="$(cat /sys/class/gpio/gpio14/value)"
+			if [ "$MODEM_IS_OFF" = "0" ]; then
+				logger -t INFO "ModemManager Hotplug: Modem is powered off per user request. Will no longer attempt to reconnect to mobile network automatically."
+				logger -t INFO "$MODEM_IS_OFF"
+				stop_modem_service_and_interface
+				exit
+			else
+				logger -t INFO "ModemManager Hotplug: Modem is powered on. Attempting to automatically reconnect mobile network."
+				logger -t INFO "$MODEM_IS_OFF"
+			fi
+
+			MODEM_NEEDS_RMA="$(cat /etc/modemsettings/modem_needs_rma)"
+			if [ "$MODEM_NEEDS_RMA" = "true" ]; then
+				logger -t INFO "ModemManager Hotplug: Modem is being reset to defaults. Stopping."
+				logger -t INFO "$MODEM_NEEDS_RMA"
+				exit
+			else
+				logger -t INFO "ModemManager Hotplug: Modem is ready. Attetpming to reconnect."
+				logger -t INFO "$MODEM_NEEDS_RMA"
+			fi
+
+			SIM_NOT_PRESENT="$(qmicli --silent -p -d /dev/cdc-wdm0 --dms-uim-get-state | grep not-present | sed 's/^.*: //' | tr -d "'")"
+			if [ "$SIM_NOT_PRESENT" = "not-present" ]; then
+				logger -t INFO "ModemManager Hotplug: SIM is not present. Will no longer attempt to reconnect to mobile network automatically."
+				logger -t INFO "$SIM_NOT_PRESENT"
+				stop_modem_service_and_interface
+				exit
+			else
+				logger -t INFO "ModemManager Hotplug: SIM is present. Attempting to automatically reconnect mobile network."
+				logger -t INFO "$SIM_NOT_PRESENT"
+			fi
+
+			MODEMIFACE="mobiledata"
+			MODEMINDEX="$(/usr/bin/mmcli -L -K | grep -Eo '/org/freedesktop/.*' | tr -d "'")"
+			if [ -z "$MODEMINDEX" ]; then
+				checkandreconnect
+			else
+				/usr/bin/mmcli -m any >/tmp/modemStatus
+			fi
+
+			MODEM_STATE="$(mmcli -m any -K | grep -m 1 modem.generic.state | sed 's/^.*: //\' | tr -d "'")"
+
+			if [ "$MODEM_STATE" = "disabled" ]; then
+				logger -t INFO "Modem is disabled. Will attempt to initiate connection."
+				reconnect
+			fi
+
+			if [ "$MODEM_STATE" = "connected" ]; then
+				logger -t INFO "Modem reports as connected. Checking actual connectivity."
+				checkandreconnect
+			fi
+
+			if [ "$MODEM_STATE" = "searching" ]; then
+				logger -t INFO "Modem is searching."
+				checkandreconnect
+			fi
+
+			if [ "$MODEM_STATE" = "idle" ]; then
+				logger -t INFO "Modem is idle.  Attempting to bring modem back online."
+				reconnect
+			fi
+
+			if [ "$MODEM_STATE" = "registered" ]; then
+				logger -t INFO "Modem is registered."
+				checkandreconnect
+			fi
+
+			# Any time this script runs, put the current modem and bearer indexes into shared memory, for use by ltestatus and other apps.
+			mmcli -L -K | awk {i++}i==2 | sed 's/^.*: //' >/tmp/modemIndex
+			echo "$(mmcli -m any -K)" | grep 'bearers.value\[1\]' | sed 's/^.*: //' >/tmp/bearerIndex
+
+			logger -t INFO "Modem hotplug script ran."
+		fi
+		echo 0 >/var/mm_hotplug_lock
+	else
+		exit
+	fi
+else
+	exit
 fi
 
-if [ -n "$CONNECTED" ]; then
-	logger -t INFO "Modem reports as connected. Checking actual connectivity."
-	checkandreconnect
-fi
-
-if [ -n "$SEARCHING" ]; then
-	logger -t INFO "Modem is searching."
-	checkandreconnect
-fi
-
-if [ -n "$IDLE" ]; then
-	logger -t INFO "Modem is idle.  Attempting to bring modem back online."
-	reconnect
-fi
-
-if [ -n "$REGISTERED" ]; then
-	logger -t INFO "Modem is registered."
-	checkandreconnect
-
-fi
-logger -t INFO "Modem hotplug script ran."
-fi
-fi
