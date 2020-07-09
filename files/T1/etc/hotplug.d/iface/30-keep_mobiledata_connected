@@ -31,7 +31,6 @@ reconnect() {
 	exit
 }
 
-
 if [ "$INTERFACE" = "mobiledata" ]; then
 	if [ "$ACTION" != "ifup" ]; then
 		if [ "$(cat /var/mm_hotplug_lock)" = "0" ]; then
@@ -116,4 +115,3 @@ if [ "$INTERFACE" = "mobiledata" ]; then
 else
 	exit
 fi
-
