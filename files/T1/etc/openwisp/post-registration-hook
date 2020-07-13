@@ -1,0 +1,6 @@
+# set management interface in openwisp-config
+# after registration to avoid slowing down registration
+# (if management_interface is configured, OpenWISP will
+#   wait for the management interface to come up before stating)
+uci set openwisp.http.management_interface=tun0
+uci commit openwisp

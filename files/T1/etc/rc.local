@@ -1,15 +1,18 @@
 # Put your custom commands here that should be executed once
-# the system init finished. By default this file does nothing.
+# the system init finished.
 #
 #
 # These commands are required by your Telco Electronics device.
 #
 # BEGINNING of required commands.
 #
-sleep 30
-/usr/bin/set_modem_in_10D_mode.sh
-sleep 30
-ifup mobiledata
+#sleep 20
+logger -t INFO "Running /etc/rc.local"
+( /usr/bin/rma_modem.sh && /usr/bin/set_modem_in_10D_mode.sh && /usr/bin/disable_modem_debug.sh )&
+#ifup mobiledata
+/usr/bin/set_imei.sh
+/usr/bin/led_listener.sh
+#
 # END of required commands.
 #
 #

@@ -44,7 +44,9 @@ In addition to a full BusyBox shell, GNU core utilities, and Linux commands
 	resetmodembands		Undo any modem band locking (return to default settings)
 	
 	### Proceed with caution ###
-	modemdebugmode_on	Put the modem into debug mode, allows running of AT commands
+	modemdebugmode_on	Put the modem into debug mode, allows running of AT commands and use of rma_modem command.
 	modemdebugmode_off	Take the modem out of debug mode
 	rma_modem		Perform RMA Reset on modem, clears all settings e.g. locked bands
+	power_modem_off		Power the internal modem module off until next reboot.
+	power_modem_on		Power the internal modem module on.
 	

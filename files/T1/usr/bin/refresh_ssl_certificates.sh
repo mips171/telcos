@@ -1,5 +1,5 @@
 #!/bin/sh
-# Regenerate SSL keys for HTTPS, set HTTPS server to use new 
+# Regenerate SSL keys for HTTPS, set HTTPS server to use new
 # certificates then restart uhttpd service.
 # Author: Nicholas Smith <nicholas.smith@telcoantennas.com.au>
 # 13-Jan-2020

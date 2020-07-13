@@ -27,11 +27,41 @@ start_service() {
 	# Setup ModemManager service
 	procd_open_instance
 	if [ $(cat /etc/modemsettings/modem_debug_mode) = "true" ]; then
+	  check_if_modem_powered_on
+	  check_if_sim_inserted
+	  logger -t INFO "Starting ModemManager in DEBUG mode"
 	  procd_set_param command /usr/sbin/ModemManager --debug
 	else
+	  check_if_modem_powered_on
+	  check_if_sim_inserted
+	  logger -t INFO "Starting ModemManager in normal mode"
 	  procd_set_param command /usr/sbin/ModemManager
 	fi
 	procd_set_param respawn "${respawn_threshold:-3600}" "${respawn_timeout:-5}" "${respawn_retry:-5}"
 	procd_set_param pidfile "${MODEMMANAGER_PID_FILE}"
 	procd_close_instance
+}
+
+check_if_sim_inserted() {
+	SIM_NOT_PRESENT="$(qmicli --silent -p -d /dev/cdc-wdm0 --dms-uim-get-state | grep not-present | sed 's/^.*: //' | tr -d "'")"
+	if [ "$SIM_NOT_PRESENT" = "not-present" ]
+	then
+		logger -t INFO "ModemManager Init: SIM is not present. Will not attempt to start ModemManager."
+		exit
+	else 
+		logger -t INFO "ModemManager Init: SIM is present. Attempting to start ModemManager"
+		continue
+	fi
+}
+
+check_if_modem_powered_on() {
+	MODEM_IS_OFF="$(cat /sys/class/gpio/gpio14/value)"
+	if [ "$MODEM_IS_OFF" = "0" ]
+	then
+		logger -t INFO "ModemManager Init: Modem is off per user request. Will not attempt to start ModemManager."
+		exit
+	else 
+		logger -t INFO "ModemManager Init: Modem is on. Attempting to start ModemManager"
+		continue
+	fi
 }

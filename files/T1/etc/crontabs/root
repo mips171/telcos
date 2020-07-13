@@ -1,0 +1,5 @@
+# Once a year, refresh the SSL certificates
+0 0 1 */12 * /usr/bin/refresh_ssl_certificates.sh
+# Update LEDs once a minute
+*/1 * * * * /usr/bin/led_listener.sh
+
